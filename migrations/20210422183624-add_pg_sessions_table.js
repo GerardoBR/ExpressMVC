@@ -6,13 +6,14 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('session', {
       sid: {
-        primaryKey: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        primaryKey: true
+        
       },
       sess: {
         type: Sequelize.JSON
       },
-      EXPIRE: {
+      expire: {
         allowNull: false,
         type: 'TIMESTAMP'
       }
