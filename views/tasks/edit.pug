@@ -1,0 +1,10 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title (Tareas)
+    body
+        form(action = `/tasks/${task.id}?_method=PUT` method = "POST")
+            input(type="text" name="categories" placeholder="separador por comas")
+            textarea(name="description" placeholder="Coloca la descripcion" )= task.description
+            input(type = "submit" value = "guardar" ) 

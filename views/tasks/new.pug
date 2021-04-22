@@ -1,0 +1,9 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title (Tareas)
+    body
+        form(action = "/tasks" method = "POST")
+            textarea(name="description" placeholder="Coloca la descripcion" ) 
+            input(type = "submit" value = "guardar" )
