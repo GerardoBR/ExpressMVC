@@ -14,7 +14,7 @@ module.exports = {
       },
       EXPIRE: {
         allowNull: false,
-        type: TIMESTAMP
+        type: 'TIMESTAMP'
       }
     });
   },
