@@ -24,10 +24,15 @@ let sessionConfig = {
   saveUninitialized: false
   // cookie: { secure: true }
 };
-if(process.env.NODE_ENV && process.env.NODE_ENV =='production'){
-  sessionConfig['store'] = new (require('connect-pg-simple')(session))();
-}
-app.use(session(sessionConfig));
+// if(process.env.NODE_ENV && process.env.NODE_ENV =='production'){
+//   sessionConfig['store'] = new (require('connect-pg-simple')(session))();
+// }
+app.use(session({
+  secret: ['123wrwczcsfzvxvasdca','123ojsdfshsfsdf'],
+  resave: false,
+  saveUninitialized: false
+  // cookie: { secure: true }
+}));
 
 app.use(findUserMiddleware);
 app.use(authUserMiddleware);
