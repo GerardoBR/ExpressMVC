@@ -19,6 +19,7 @@
     "password": "cd4745cd95dbfea8bb12ecfcfcfaef09368f8439e9e2eb2707e327faa5806d1a",
     "database": "dejn085sf6mbn0",
     "host": "ec2-54-87-112-29.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "ssl":true
   }
 }
