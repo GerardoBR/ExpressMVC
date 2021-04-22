@@ -36,7 +36,7 @@ app.get('/',function(req,res){
     res.render('home',{user :req.user})
 });
 
-let server = app.listen(3001);
+let server = app.listen(process.env.PORT || 3001);
 
 let io = socketio(server);
 let sockets={};
