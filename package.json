@@ -25,5 +25,8 @@
     "socket.io-client": "^4.0.1",
     "sqlite3": "^5.0.2",
     "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
