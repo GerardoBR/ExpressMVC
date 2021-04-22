@@ -18,12 +18,16 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.set('view engine','pug');
 
-app.use(session({
-    secret: ['123wrwczcsfzvxvasdca','123ojsdfshsfsdf'],
-    resave: false,
-    saveUninitialized: false
-    // cookie: { secure: true }
-  }));
+let sessionConfig = {
+  secret: ['123wrwczcsfzvxvasdca','123ojsdfshsfsdf'],
+  resave: false,
+  saveUninitialized: false
+  // cookie: { secure: true }
+};
+if(process.env.NODE_ENV && process.env.NODE_ENV =='production'){
+  sessionConfig['store'] = new (require('connect-pg-simple')(session))();
+}
+app.use(session(sessionConfig));
 
 app.use(findUserMiddleware);
 app.use(authUserMiddleware);
